@@ -3,11 +3,12 @@
 
 
 # use the dbs array for collection posts
-- use array
-
+```js
+use array
+```
 # Create a collection of posts
-
- - db.posts.insertMany([
+```js
+ db.posts.insertMany([
     {
         "title": "Masai 101",
         "author_id": "1",
@@ -33,8 +34,11 @@
         ]
     }
 ])
-
- - db.posts.find()
+```
+```js
+ db.posts.find()
+```
+**Output->**
 [
   {
     _id: ObjectId("62091a592c0260bb8ee2e076"),
@@ -57,13 +61,15 @@
 
 
 # 1. push a new tag into a post.
-
- - db.posts.updateOne({},{$push: {tags: ["Programming"]}})
-
- - db.posts.updateOne({_id: ObjectId("62091a592c0260bb8ee2e077")},{$push: {tags: {$each:["Programming"]}}})
-
- - db.posts.find()
-
+```js
+  db.posts.updateOne({},{$push: {tags: ["Programming"]}})
+```
+```js
+ db.posts.updateOne({_id: ObjectId("62091a592c0260bb8ee2e077")},{$push: {tags: {$each:["Programming"]}}})
+```
+```js
+ db.posts.find()
+```
 **Output->**
 [
   {
@@ -90,9 +96,9 @@
 
 
 # 2. push multiple tags into a post.
-
- - db.posts.updateMany({},{$push: {tags: {$each:["Coding","FSWD"]}}})
-
+```js
+ db.posts.updateMany({},{$push: {tags: {$each:["Coding","FSWD"]}}})
+```
 **Output->**
 {
   acknowledged: true,
@@ -102,8 +108,9 @@
   upsertedCount: 0
 }
 
- - db.posts.find()
-
+```js
+ db.posts.find()
+```
 **Output->**
 [
   {
@@ -129,11 +136,12 @@
 
 
 # 3. pull and remove a particular tag.
-
-- db.posts.updateMany({title: "Masai 101"},{$pull: {tags: ["Programming"]}})
-
-- db.posts.find()
-
+```js
+db.posts.updateMany({title: "Masai 101"},{$pull: {tags: ["Programming"]}})
+```
+```js
+db.posts.find()
+```
 **Output->**
 [
   {
@@ -159,11 +167,12 @@
 
 
 # 4. pull and remove an array of values use $in.
-
-- db.posts.updateMany({},{$pull: {tags: {$in: ["Programming"]}}})
-
-- db.posts.find()
-
+```js
+db.posts.updateMany({},{$pull: {tags: {$in: ["Programming"]}}})
+```
+```js
+db.posts.find()
+```
 **Output->**
 [
   {
@@ -192,10 +201,12 @@
 # 5. use $pop to remove first and last tag.
 
 **$pop from last**
--  db.posts.updateMany({},{$pop: {tags: 1}})
-
-- db.posts.find()
-
+```js
+db.posts.updateMany({},{$pop: {tags: 1}})
+```
+```js
+db.posts.find()
+```
 **Output->**
 [
   {
@@ -218,10 +229,12 @@
 
 
 **$pop from front**
-- db.posts.updateMany({},{$pop: {tags: -1}})
-
-- db.posts.find()
-
+```js
+db.posts.updateMany({},{$pop: {tags: -1}})
+```
+```js
+db.posts.find()
+```
 **Output->**
 [
   {
@@ -248,11 +261,12 @@
 
 
 # 6. use addToSet to add.5 tags.
-
-- db.posts.updateMany({},{$addToSet: {tags: {$each: ["DSA","Coding","React","JavaScript","Programming"]}}})
-
-- db.posts.find()
-
+```js
+db.posts.updateMany({},{$addToSet: {tags: {$each: ["DSA","Coding","React","JavaScript","Programming"]}}})
+```
+```js
+db.posts.find()
+```
 **Output->**
 [
   {
@@ -281,15 +295,15 @@
 # Part - II
 
 # 7. create a collection of users with high scores.
-
-- db.users.insertMany([ { name: "Satya", scores: [96,94,70] }])
-
+```js
+db.users.insertMany([ { name: "Satya", scores: [96,94,70] }])
+```
 
 
 # 8. each user can have 3 high scores.
-
-- db.users.find()
-
+```js
+db.users.find()
+```
 **Output->**
 [
   {
@@ -301,9 +315,9 @@
 
 
 # 9. it should be always in descending order.
-
-- db.users.find({},{scores: 1})
-
+```js
+db.users.find({},{scores: 1})
+```
 **Output->**
 [
   { _id: ObjectId("6209284c2c0260bb8ee2e078"), scores: [ 96, 94, 70 ] }
@@ -311,11 +325,12 @@
 
 
 # 10. add 5 new high scores, and maintain the order, and keep the limit of 3 scores.
-
-- db.users.updateMany({}, { $push: { scores: {$each: [67,64,35, 100, 45], $sort: -1 , $slice: 3 }} })
-
-- db.users.find()
-
+```js
+db.users.updateMany({}, { $push: { scores: {$each: [67,64,35, 100, 45], $sort: -1 , $slice: 3 }} })
+```
+```js
+db.users.find()
+```
 **Output->**
 [
   {
@@ -327,11 +342,12 @@
 
 
 # 11. remove multiple scores which are greater than x value.
-
-- db.users.updateMany({}, { $pull: { scores: {$gt: 96}}})
-
-- db.users.find()
-
+```js
+db.users.updateMany({}, { $pull: { scores: {$gt: 96}}})
+```
+```js
+db.users.find()
+```
 **Output->**
 [
   {
