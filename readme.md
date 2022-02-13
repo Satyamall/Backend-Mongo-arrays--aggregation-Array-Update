@@ -1,4 +1,7 @@
 
+# Backend Mongo- Arrays update queries, Aggregation Pipelines -> Array-Update
+
+
 # use the dbs array for collection posts
 - use array
 
@@ -50,7 +53,8 @@
 ]
 
 **Below Picture for above querry**
--254
+![Screenshot (254)](https://user-images.githubusercontent.com/80479635/153762071-18994ca1-7c9d-4b29-ac7a-ea3ece85b6a7.png)
+
 
 # 1. push a new tag into a post.
 
@@ -81,7 +85,8 @@
 ]
 
 **Below picture for above**
-- 255
+![Screenshot (255)](https://user-images.githubusercontent.com/80479635/153762081-cad4dd2c-707e-4587-af37-efaa10e3c969.png)
+
 
 
 # 2. push multiple tags into a post.
@@ -120,7 +125,7 @@
 ]
 
 **Below Picture show above querry**
--256
+![Screenshot (256)](https://user-images.githubusercontent.com/80479635/153762088-a9915413-a3cb-47da-aa4e-49a954a51f84.png)
 
 
 # 3. pull and remove a particular tag.
@@ -150,7 +155,7 @@
 ]
 
 **Below picture for above**
-- 257
+![Screenshot (257)](https://user-images.githubusercontent.com/80479635/153762098-422eace8-96fe-4f99-8861-77b5e2c8b61f.png)
 
 
 # 4. pull and remove an array of values use $in.
@@ -180,7 +185,8 @@
 ]
 
 **Below picture for above querry**
-- 258
+![Screenshot (258)](https://user-images.githubusercontent.com/80479635/153762110-af16e469-5ded-4882-abdd-41d14b2c4e37.png)
+
 
 
 # 5. use $pop to remove first and last tag.
@@ -237,8 +243,8 @@
 ]
 
 **Below picture for above**
--259
--260
+![Screenshot (259)](https://user-images.githubusercontent.com/80479635/153762123-87066cbd-7119-4c5b-af9b-be8f11b0195a.png)
+![Screenshot (260)](https://user-images.githubusercontent.com/80479635/153762138-f3e2423c-dc74-48e3-835c-028bb096fd61.png)
 
 
 # 6. use addToSet to add.5 tags.
@@ -268,7 +274,7 @@
 ]
 
 **Below picture show above**
--261
+![Screenshot (261)](https://user-images.githubusercontent.com/80479635/153762145-bf3ebb75-a6dd-459c-93d4-4c4384f0cb22.png)
 
 
 
@@ -337,5 +343,7 @@
 
 
 **Below picture for above querrie from 7-11**
--263
--264
+![Screenshot (263)](https://user-images.githubusercontent.com/80479635/153762166-28d2e12f-a8a0-43ba-a0c4-b9159b2de94e.png)
+![Screenshot (264)](https://user-images.githubusercontent.com/80479635/153762169-dfc9339a-65f2-4ff9-adfb-25f36b50ee14.png)
+
+
